@@ -9,3 +9,9 @@ export const decorateRequest: FastifyPluginCallback = (fastify, options, done) =
 
   done();
 };
+
+declare module 'fastify' {
+  interface FastifyRequest {
+    prisma: PrismaClient;
+  }
+}
